@@ -1,3 +1,4 @@
-.vscode
+secrets/
 srcs/.env
-secrets
+.vscode/
+.DS_Store
