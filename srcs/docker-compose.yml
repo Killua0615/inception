@@ -59,6 +59,7 @@ services:
       - inception
     restart: unless-stopped
 
+# for Macbook
 # volumes:
 #   mariadb_data:
 #     name: mariadb_data
