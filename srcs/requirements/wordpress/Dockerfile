@@ -1,7 +1,7 @@
-FROM alpine:3.20
+FROM alpine:3.22
 
 RUN apk update && apk add --no-cache \
-    php82 php82-fpm php82-phar php82-mysqli php82-curl php82-json php82-xml php82-mbstring php82-gd php82-zip php82-openssl \
+    php82 php82-fpm php82-phar php82-mysqli php82-curl php82-json php82-xml php82-mbstring php82-gd php82-zip php82-openssl php82-ctype \
     mariadb-client curl tar
 
 RUN adduser -S -G www-data -H -s /sbin/nologin www-data || true

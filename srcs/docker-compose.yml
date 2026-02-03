@@ -59,14 +59,39 @@ services:
       - inception
     restart: unless-stopped
 
+# volumes:
+#   mariadb_data:
+#     name: mariadb_data
+#     driver: local
+#     driver_opts:
+#       type: none
+#       o: bind
+#       device: /Users/natsumi/data/mariadb
+
+#   wordpress_files:
+#     name: wordpress_files
+#     driver: local
+#     driver_opts:
+#       type: none
+#       o: bind
+#       device: /Users/natsumi/data/wordpress
+
 volumes:
   mariadb_data:
     name: mariadb_data
     driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /home/<login>/data/mariadb
 
   wordpress_files:
     name: wordpress_files
     driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /home/<login>/data/wordpress
 
 networks:
   inception:
