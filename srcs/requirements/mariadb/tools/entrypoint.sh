@@ -1,6 +1,7 @@
 #!/bin/sh
 set -eu
 
+# This function allows secrets to be provided either as plain environment variables or as files, which is commonly used with Docker secrets.
 read_secret() {
   var="$1"
   file_var="${1}_FILE"
@@ -13,7 +14,8 @@ read_secret() {
   fi
 }
 
-MYSQLD_BIN="$(command -v mariadbd || command -v mysqld)"
+# To ensure the correct executable is called when starting the MariaDB server later
+MYSQLD_BIN="$(command -v mariadbd)"
 
 ROOT_PASS="$(read_secret MYSQL_ROOT_PASSWORD)"
 DB_PASS="$(read_secret MYSQL_PASSWORD)"
