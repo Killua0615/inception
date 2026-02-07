@@ -46,7 +46,7 @@ if [ ! -d /var/lib/mysql/mysql ]; then
   i=0
   until mysqladmin --socket=/run/mysqld/mysqld.sock ping >/dev/null 2>&1; do
     i=$((i+1))
-    if [ "$i" -ge 30 ]; then
+    if [ "$i" -ge 2000 ]; then
       echo "MariaDB init: server did not start" >&2
       kill "$pid" 2>/dev/null || true
       exit 1
